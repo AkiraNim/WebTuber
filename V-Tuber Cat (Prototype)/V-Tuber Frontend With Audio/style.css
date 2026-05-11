@@ -1,0 +1,24 @@
+/* Removes default margins and hides scrollbars */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    /* The golden rule for OBS transparency: */
+    background-color: transparent !important; 
+    
+    /* Centers the avatar on the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Adds a smooth bounce animation when the avatar talks */
+#avatar {
+    max-height: 90vh;
+    transition: transform 0.1s ease-in-out;
+}
+
+.is-talking {
+    transform: scale(1.05) translateY(-10px);
+}
