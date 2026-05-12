@@ -1,10 +1,10 @@
 const avatarImg = document.getElementById('avatar');
 const startBtn = document.getElementById('start-btn');
-const volumeDisplay = document.getElementById('volume-display');
+// --- VOLUME DISPLAY REFERENCE REMOVED ---
 
-// Your 11 frames
+// Your 11 frames (ensure paths are correct!)
 const frames = [
-    "../Cato/idle.png", "../../Cato/frame_2.png", "../Cato/frame_3.png", "../Cato/frame_4.png",
+    "../Cato/idle.png", "../Cato/frame_2.png", "../Cato/frame_3.png", "../Cato/frame_4.png",
     "../Cato/frame_5.png", "../Cato/frame_6.png", "../Cato/frame_7.png", "../Cato/frame_8.png",
     "../Cato/frame_9.png", "../Cato/frame_10.png", "../Cato/frame_11.png"
 ];
@@ -36,7 +36,7 @@ startBtn.addEventListener('click', async () => {
         const bufferLength = analyser.frequencyBinCount;
         dataArray = new Uint8Array(bufferLength);
         
-        // Hide the button once started, but keep the text
+        // Hide the button once started
         startBtn.style.display = 'none';
         
         // Start the animation loop
@@ -63,8 +63,7 @@ function updateAvatar() {
     }
     let currentVolume = sum / dataArray.length;
     
-    // Update the text on screen so you can calibrate your mic
-    volumeDisplay.innerText = `Volume: ${currentVolume.toFixed(1)}`;
+    // --- UPDATE TEXT ON SCREEN REMOVED ---
     
     // 3. Map the volume to the frames (0 to 10)
     // Clamp the volume so it doesn't break the math
